@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
+  dotfiles = "${config.home.homeDirectory}/nixos-config/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
     qtile = "qtile";
@@ -12,7 +12,6 @@ in
 {
 	home.username = "db";
 	home.homeDirectory = "/home/db";
-	programs.git.enable = true;
 	home.stateVersion = "26.05";
 	programs.bash = {
 		enable = true;
@@ -45,7 +44,19 @@ in
     zsh
     oh-my-zsh
   	tree-sitter
+    alacritty
 	];
+
+programs.git = {
+  enable = true;
+
+  userName = "Daan Blom";
+  userEmail = "contact@daanblom.com";
+
+  settings = {
+    init.defaultBranch = "main";
+  };
+};
 
 programs.zsh = {
   enable = true;
@@ -61,7 +72,7 @@ programs.zsh = {
   shellAliases = {
     ll = "ls -l";
     n = "nvim";
-    update = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-vm";
+    update = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos";
   };
 
   history = {

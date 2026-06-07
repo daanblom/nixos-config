@@ -11,19 +11,19 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # networking.hostName = "nixos-vm"; # Define your hostname.
+  # networking.hostName = "nixos"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
   # networking.networkmanager.enable = true;
 
   networking = {
-    hostName = "nixos-vm";
+    hostName = "nixos";
     networkmanager.enable = true;
     useDHCP = false;
-    interfaces.enp1s0 = {
-      useDHCP = true;
+    interfaces.enp0s31f6 = {
+      useDHCP = false;
       ipv4.addresses = [ {
-        address = "192.168.122.100";
+        address = "192.168.1.100";
         prefixLength = 24;
       } ];
     };
