@@ -1,0 +1,3 @@
+return {
+	"daanblom/db.nvim",
+}
