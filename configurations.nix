@@ -6,15 +6,8 @@
       ./hardware-configuration.nix
     ];
 
-  # Use the GRUB 2 boot loader.
-  # boot.loader.grub.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  # networking.hostName = "nixos"; # Define your hostname.
-
-  # Configure network connections interactively with nmcli or nmtui.
-  # networking.networkmanager.enable = true;
 
   networking = {
     hostName = "nixos";
@@ -39,13 +32,13 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-  services.xserver = {
-	enable = true;
-	autoRepeatDelay = 200;
-	autoRepeatInterval = 35;
-	windowManager.qtile.enable = true;
-  };
-  services.displayManager.ly.enable = true;
+	#  services.xserver = {
+	# enable = true;
+	# autoRepeatDelay = 200;
+	# autoRepeatInterval = 35;
+	# windowManager.qtile.enable = true;
+	#  };
+	#  services.displayManager.ly.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.db = {
