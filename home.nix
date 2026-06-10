@@ -6,8 +6,9 @@ let
   configs = {
     qtile = "qtile";
     nvim = "nvim";
+    tmux = "tmux";
   };
-in 
+in
 
 {
 	home.username = "db";
@@ -22,29 +23,32 @@ in
       source = create_symlink "${dotfiles}/${subpath}";
       recursive = true;
      })
-    configs; 
+    configs;
 
 	home.packages = with pkgs; [
-    zip
-    unzip
-		neovim
-		ripgrep
-		nil
-		nixpkgs-fmt
-		nodejs
-		gcc
-		gnumake
-    gopls
+    gcc
+    gnumake
+    neovim
+    nil
+    nixpkgs-fmt
+    nodejs
+    ripgrep
+    tree-sitter
+    alacritty
+    bat
+    btop
+    deno
+    fastfetch
     fzf
     go
-    deno
-    stylua
-    zsh
-    tree
-    zsh
+    gopls
     oh-my-zsh
-  	tree-sitter
-    alacritty
+    stylua
+    tree
+    unzip
+    zip
+    zsh
+    file
 	];
 
 programs.git = {
