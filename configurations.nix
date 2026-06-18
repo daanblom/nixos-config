@@ -55,7 +55,6 @@
     vim 
     wget
     git
-    alacritty
     zsh
   ];
 
