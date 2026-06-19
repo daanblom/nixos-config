@@ -54,10 +54,9 @@ in
 programs.git = {
   enable = true;
 
-  userName = "Daan Blom";
-  userEmail = "contact@daanblom.com";
-
   settings = {
+    user.name = "Daan Blom";
+    user.email = "contact@daanblom.com";
     init.defaultBranch = "main";
   };
 };
@@ -65,13 +64,13 @@ programs.git = {
 programs.zsh = {
   enable = true;
 
-  enableAutosuggestions = true;
+  autosuggestion.enable = true;
   syntaxHighlighting.enable = true;
 
-   oh-my-zsh = {
-   enable = true;
-   plugins = [ "git" ];
- };
+  oh-my-zsh = {
+    enable = true;
+    plugins = [ "git" ];
+  };
 
   shellAliases = {
     ll = "ls -l";
@@ -87,5 +86,5 @@ programs.zsh = {
   setOptions = [
     "HIST_IGNORE_ALL_DUPS"
   ];
-  };
+};
 }
