@@ -51,11 +51,11 @@
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
+    git
     tmux
     vim 
     w3m
     wget
-    git
     zsh
   ];
 
