@@ -53,6 +53,7 @@
   environment.systemPackages = with pkgs; [
     tmux
     vim 
+    w3m
     wget
     git
     zsh
