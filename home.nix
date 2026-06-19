@@ -26,6 +26,9 @@ in
     configs;
 
 	home.packages = with pkgs; [
+    lazygit
+    python3
+    cargo
     gcc
     gnumake
     neovim
