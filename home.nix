@@ -90,8 +90,8 @@ programs.zsh = {
     "HIST_IGNORE_ALL_DUPS"
   ];
 
-      initExtra = ''
-      bindkey '^ ' autosuggest-accept
-      '';
+  initContent = ''
+  bindkey '^ ' autosuggest-accept
+  '';
 };
 }
