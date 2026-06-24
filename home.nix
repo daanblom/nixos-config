@@ -26,32 +26,31 @@ in
     configs;
 
 	home.packages = with pkgs; [
-    lazygit
-    python3
+    bat
+    btop
     cargo
+    deno
+    fastfetch
+    file
+    fzf
     gcc
     gnumake
+    go
+    gopls
+    lazygit
     neovim
     nil
     nixpkgs-fmt
     nodejs
-    ripgrep
-    tree-sitter
-    alacritty
-    bat
-    btop
-    deno
-    fastfetch
-    fzf
-    go
-    gopls
     oh-my-zsh
+    python3
+    ripgrep
     stylua
     tree
+    tree-sitter
     unzip
     zip
     zsh
-    file
 	];
 
 programs.git = {
@@ -66,6 +65,7 @@ programs.git = {
 
 programs.zsh = {
   enable = true;
+  #dotDir = "~/nixos-config/config/zsh";
 
   autosuggestion.enable = true;
   syntaxHighlighting.enable = true;
