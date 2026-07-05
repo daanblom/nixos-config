@@ -43,7 +43,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.db = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" ]; # Enable "sudo" and "docker" for the user.
     shell = pkgs.zsh;
   };
 
@@ -78,6 +78,12 @@
 		PerSourcePenalties = "crash:3600s authfail:3600s max:86400s";
   	};
   };
+
+  # Enable docker
+  virtualisation.docker = {
+    enable = true;
+  };
+
 
 }
 
