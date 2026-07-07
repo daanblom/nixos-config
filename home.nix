@@ -6,7 +6,6 @@ let
   configs = {
     nvim = "nvim";
     tmux = "tmux";
-    zsh = "zsh";
   };
 in
 
@@ -65,7 +64,6 @@ programs.git = {
 
 programs.zsh = {
   enable = true;
-  #dotDir = "~/nixos-config/config/zsh";
 
   autosuggestion.enable = true;
   syntaxHighlighting.enable = true;
@@ -91,7 +89,9 @@ programs.zsh = {
   ];
 
   initContent = ''
-  bindkey '^ ' autosuggest-accept
-  '';
-};
+    if [ -f "$HOME/nixos-config/config/zsh/.zshrc" ]; then
+      source "$HOME/nixos-config/config/zsh/.zshrc"
+    fi
+    '' ;
+  };
 }
